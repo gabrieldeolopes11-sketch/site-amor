@@ -1,0 +1,679 @@
+/* ==========================
+   BOTÕES
+========================== */
+
+button{
+    position:relative;
+    overflow:hidden;
+
+    display:block;
+    margin:30px auto 0;
+
+    padding:16px 42px;
+
+    border:none;
+    border-radius:999px;
+
+    background:linear-gradient(135deg,#ff5d9e,#ff7bb2);
+
+    color:#fff;
+
+    font-size:19px;
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+    0 10px 30px rgba(255,93,158,.45);
+}
+
+button:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.05);
+
+    box-shadow:
+    0 20px 40px rgba(255,93,158,.55);
+
+}
+
+button:active{
+
+    transform:scale(.96);
+
+}
+
+button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:50%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.35);
+
+    transform:skewX(-25deg);
+
+    transition:.8s;
+
+}
+
+button:hover::before{
+
+    left:150%;
+
+}
+
+#abrir{
+
+    animation:pulsar 2s infinite;
+
+}
+
+@keyframes pulsar{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.05);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    color:white;
+    background:linear-gradient(180deg,#07111f 0%,#151c3b 45%,#2f1548 100%);
+    min-height:100vh;
+}
+
+/* ==========================
+   CÉU
+========================== */
+
+#ceu{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-5;
+}
+
+/* Lua */
+
+.lua{
+
+    position:absolute;
+
+    top:60px;
+
+    right:50px;
+
+    width:130px;
+
+    height:130px;
+
+    border-radius:50%;
+
+    background:#fff8d6;
+
+    box-shadow:
+    0 0 40px #fff6b5,
+    0 0 90px #fff2ae,
+    0 0 150px rgba(255,255,220,.3);
+
+}
+
+/* Estrelas */
+
+#estrelas{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.star{
+
+    position:absolute;
+
+    width:2px;
+
+    height:2px;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:piscar 3s infinite;
+
+}
+
+@keyframes piscar{
+
+0%,100%{
+
+opacity:.25;
+
+transform:scale(1);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(2);
+
+}
+
+}
+
+/* Partículas */
+
+#particulas{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.particula{
+
+    position:absolute;
+
+    width:4px;
+
+    height:4px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.25);
+
+    animation:subir linear infinite;
+
+}
+
+@keyframes subir{
+
+from{
+
+transform:translateY(120vh);
+
+}
+
+to{
+
+transform:translateY(-120vh);
+
+}
+
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+.caixa{
+
+    width:95%;
+
+    max-width:760px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:30px;
+
+    padding:45px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.45);
+
+}
+
+h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:64px;
+
+    margin-bottom:20px;
+
+}
+
+.sub{
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    opacity:.9;
+
+}
+/* ==========================
+   ENVELOPE
+========================== */
+
+.envelope{
+
+    position:relative;
+
+    width:260px;
+
+    height:170px;
+
+    margin:40px auto;
+
+    perspective:1000px;
+
+}
+
+.base{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+
+    height:135px;
+
+    background:linear-gradient(145deg,#ff4f8b,#ff80b2);
+
+    border-radius:0 0 20px 20px;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.35);
+
+}
+
+.tampa{
+
+    position:absolute;
+
+    width:100%;
+
+    height:110px;
+
+    background:linear-gradient(145deg,#ff8ab7,#ff5d91);
+
+    clip-path:polygon(0 100%,50% 0,100% 100%);
+
+    transform-origin:top;
+
+    transition:1.3s cubic-bezier(.2,.9,.2,1);
+
+    z-index:5;
+
+}
+
+.papel{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:18px;
+
+    transform:translateX(-50%);
+
+    width:190px;
+
+    height:120px;
+
+    background:linear-gradient(#ffffff,#f8f8f8);
+
+    border-radius:12px;
+
+    padding:20px;
+
+    color:#444;
+
+    overflow:hidden;
+
+    transition:2s cubic-bezier(.2,.9,.2,1);
+
+    z-index:1;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.25);
+
+}
+
+.linha{
+
+    width:100%;
+
+    height:4px;
+
+    background:#ececec;
+
+    margin-top:12px;
+
+    border-radius:20px;
+
+}
+
+.envelope.aberto .tampa{
+
+    transform:rotateX(180deg);
+
+}
+
+.envelope.aberto{
+
+    animation:balancar .8s ease;
+}
+
+.envelope.aberto .papel{
+
+    transform:
+    translate(-50%,-260px)
+    scale(1.55)
+    rotate(-2deg);
+
+}
+
+@keyframes balancar{
+
+0%{
+transform:rotate(0deg);
+}
+
+20%{
+transform:rotate(-4deg);
+}
+
+40%{
+transform:rotate(4deg);
+}
+
+60%{
+transform:rotate(-3deg);
+}
+
+80%{
+transform:rotate(2deg);
+}
+
+100%{
+transform:rotate(0deg);
+}
+
+}
+/* ==========================
+   CONTEÚDO
+========================== */
+
+#conteudo{
+    display:none;
+    width:92%;
+    max-width:1000px;
+    margin:40px auto;
+}
+
+.card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:25px;
+    padding:30px;
+    margin-bottom:30px;
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.card h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+/* ==========================
+   CARTA
+========================== */
+
+#textoCarta{
+    white-space:pre-line;
+    font-size:18px;
+    line-height:1.9;
+}
+
+/* ==========================
+   GALERIA
+========================== */
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:20px;
+}
+
+.galeria img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+
+    background:white;
+    padding:10px 10px 30px;
+
+    border-radius:8px;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.35);
+
+    transition:.35s;
+
+    cursor:pointer;
+}
+
+.galeria img:hover{
+
+    transform:
+    rotate(-2deg)
+    scale(1.05);
+
+}
+
+/* ==========================
+   ÁUDIO
+========================== */
+
+audio{
+    width:100%;
+}
+
+/* ==========================
+   MENSAGEM
+========================== */
+
+#mensagem{
+    margin-top:20px;
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* ==========================
+   CORAÇÕES
+========================== */
+
+.heart{
+
+    position:fixed;
+
+    top:-30px;
+
+    pointer-events:none;
+
+    animation:cair linear forwards;
+
+}
+
+@keyframes cair{
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================
+   PÉTALAS
+========================== */
+
+.petala{
+
+    position:fixed;
+
+    top:-40px;
+
+    pointer-events:none;
+
+    animation:petalas linear forwards;
+
+}
+
+@keyframes petalas{
+
+    to{
+
+        transform:
+
+        translateY(110vh)
+
+        translateX(100px)
+
+        rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================
+   RODAPÉ
+========================== */
+
+footer{
+
+    text-align:center;
+
+    padding:40px;
+
+    opacity:.85;
+
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+@media(max-width:700px){
+
+h1{
+
+font-size:42px;
+
+}
+
+.sub{
+
+font-size:17px;
+
+}
+
+.caixa{
+
+padding:25px;
+
+}
+
+.envelope{
+
+width:180px;
+
+height:120px;
+
+}
+
+.card{
+
+padding:20px;
+
+}
+
+.galeria{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+#textoCarta{
+
+font-size:16px;
+
+}
+
+}
